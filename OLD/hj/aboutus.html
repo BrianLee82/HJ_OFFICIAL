@@ -1,0 +1,899 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+        <link rel="stylesheet" href="http://img.wezhan.cn/Plugins/Designer/Content/css/jquery-ui.min.css" />
+    <link rel="icon" href="http://img.wezhan.cn/88075_favicon.ico?t=201702131318098236" />
+    <link rel="shortcut icon" href="http://img.wezhan.cn/88075_favicon.ico?t=201702131318098236" />
+    <link rel="bookmark" href="http://img.wezhan.cn/88075_favicon.ico?t=201702131318098236" />
+
+    <title>关于我们</title>
+    <meta name="description" content="欢叫软件科技（苏州）有限公司，主要从事互联网旅游行业的整体解决方案，公司创办人在旅游行业深耕多年，亲自带队服务了国内外一些大型的景区、主题公园，开发实施了智慧旅游线上（B2B、B2C、OTA）、线下电子票务、检票、水公园、酒店、温泉等多业态综合管理系统及平台，有丰富的行业软件开发、实施、维护的经验。公司希望大批有识之士前来合作，共同发展。
+　　欢叫软件科技，致力于打造一个安全、稳定、高效、可扩展的综合旅游营销管理解决方案，在互联网、人工智能的环境下实现既服务于大中型景区、主题公园，又帮助小景区、主题公园进行线上、线下产品销售及管理。" />
+    <meta name="keywords" content="欢叫科技,欢叫软件科技,欢叫软件,欢叫软件科技（苏州）有限公司,智慧旅游,智慧景区,主体公园,水公园,温泉,旅游目的地LOTS生态,全域旅游,旅游目的地,旅游电子商务,景区电商平台,景区票务系统,景区售票系统,景区管理系统,景区信息化建设" />
+    <link rel="stylesheet" href="css/base.pc.css" type="text/css" />
+    <link href="css/iconfont.css" rel="stylesheet" />
+    <link href="css/pager.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/iconfontV2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/sy.css" type="text/css" />
+    <link rel="stylesheet" href="css/pager.css" /> 
+    <script type="text/javascript" src="css/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="css/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="css/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="css/public.common.min.js"></script>
+    <script type="text/javascript" src="css/jquery.lazyload.min.js"></script>
+    <script src="css/kino.razor.min.js"></script>
+    <script type="text/javascript" src="css/underscore.js"></script>
+    <script type="text/javascript" src="css/jquery.slider.js"></script>
+    <script type="text/javascript" src="css/jquery.color.js"></script>
+    <script language='javascript' type='text/javascript' id='yibuHeaderScript'>
+    </script>
+    <script type="text/javascript" src="css/velocity.min.js"></script>
+    <script type="text/javascript" src="css/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="css/jquery.validatestar.min.js"></script>
+
+
+    
+</head>
+<body>
+    <input type="hidden" id="pageinfo" value="37676" data-type="" data-device="pc" data-entityid="" />
+<style>
+    .viewSwitch {
+        position: fixed;
+        right: 60px;
+        top: 60px;
+        z-index: 999999999;
+        background-color: white;
+    }
+
+    .deviceSwitch {
+        width: 96px;
+        text-align: center;
+        float: left;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+        .deviceSwitch div {
+            background-color: #FFF;
+            width: 48px;
+            font-size: 20px;
+            float: left;
+            color: #222;
+            cursor: pointer;
+        }
+
+            .deviceSwitch div:hover {
+                color: #29A0CB;
+            }
+
+            .deviceSwitch div span {
+                line-height: 48px;
+            }
+
+            .deviceSwitch div.active {
+                background-color: #29A0CB;
+                color: white;
+                cursor: auto;
+            }
+
+                .deviceSwitch div.active:hover {
+                    color: white;
+                }
+
+                .deviceSwitch div.active span {
+                    color: #FFF;
+                }
+</style>
+
+<script type="text/javascript">
+    (function ($) {
+        $.extend({
+            request: function (m) {
+                var sValue = location.search.match(new RegExp("[\?\&]" + m + "=([^\&]*)(\&?)", "i"));
+                return sValue ? sValue[1] : sValue;
+            },
+            urlUpdateParams: function (url, name, value) {
+                var r = url;
+                if (r != null && r != 'undefined' && r != "") {
+                    value = encodeURIComponent(value);
+                    var reg = new RegExp("(^|)" + name + "=([^&]*)(|$)");
+                    var tmp = name + "=" + value;
+                    if (url.match(reg) != null) {
+                        r = url.replace(eval(reg), tmp);
+                    } else {
+                        if (url.match("[\?]")) {
+                            r = url + "&" + tmp;
+                        } else {
+                            r = url + "?" + tmp;
+                        }
+                    }
+                }
+                return r;
+            }
+        });
+    })(jQuery);
+    function initialDeviceSwitch() {
+        var pageinfo = $("#pageinfo");
+        if (pageinfo.length == 0 && window.frames.length > 0) {
+            pageinfo = $(window.frames[0].document).find("#pageinfo");
+        }
+        $(".viewSwitch").show();
+        if (pageinfo.length == 0) {
+            return;
+        }
+        var pageId = pageinfo.val();
+        var pagedevice = pageinfo.attr("data-device");
+        var pageType = pageinfo.attr("data-type");
+        var pageModelId = pageinfo.attr("data-entityid");
+        $(".deviceSwitch").find("div[data-device=" + pagedevice + "]").addClass("active");
+        $(".deviceSwitch").find("div").not(".active").click(function () {
+            var mobileUrl = "http://" + window.location.host;
+
+            if (pagedevice == "pc") {
+                mobileUrl = mobileUrl + "/prevmobilepage/" + pageId + window.location.search;
+                mobileUrl = $.urlUpdateParams(mobileUrl, "pageType", pageType);
+                mobileUrl = $.urlUpdateParams(mobileUrl, "pmId", pageModelId);
+            } else if (pagedevice == "mobile") {
+                switch (pageType) {
+                    case "newsitem":
+                        mobileUrl = mobileUrl + "/" + pageType + "/" + pageModelId + window.location.search;
+                        break;
+                    case "product":
+                        mobileUrl = mobileUrl + "/" + pageType + "/" + pageModelId + window.location.search;
+                        break;
+                    default:
+                        mobileUrl = mobileUrl + "/yibucategorypage/" + pageId + window.location.search;
+                        break;
+                }
+            }
+            window.location.href = $.urlUpdateParams(mobileUrl, "setprev", $(this).attr("data-device"));
+        });
+    }
+    $(function () {
+        if ($("#preMainFrame").length > 0) {
+            $("#preMainFrame").load(initialDeviceSwitch);
+        } else {
+            initialDeviceSwitch();
+        }
+    });
+</script>    <div  id="view_layout_1_843" class="mainSamrtView yibuSmartViewMargin"   >
+<div class='yibuFrameContent layout_Block2_Item0' style='border-style:none;'>
+       <style type="text/css">
+
+ .header,.main-wrap .main,.footer { position:relative; clear:both; margin:0 auto; padding:0;}
+ .main-wrap { clear:both; margin:0; padding:0; width:auto; }
+ .main-wrap .main {}
+
+.main-wrap .main .content { width:100%;}
+
+body{
+background-color:;
+
+}
+</style>
+
+  <!--menu-->
+<style type="text/css">
+  .lkswidth{ width: 100%; height: 100px; background: #000911; display: none  }
+  .lksmaxline{ width: 1000px; height: 100px; margin: 0 auto; }
+  .lkswidthleft{ width: 161px; height: 75px; margin-left: 20px; float: left; padding-top: 15px; };
+  .newright{ width: 800px; height: 100px; background: red; float: left; }
+  .newright ul { width:800px; height: 100px; margin-left: 390px; }
+  .newright ul li { width: 120px; height: 100px; float: left; padding-left: 8px; line-height: 100px; font-size: 14px;}
+  .newright ul li a{ color: #fff; }
+  .newright ul li a:hover{ color: #fe4624; text-decoration: none; }
+  .newadd{position: fixed; top: 0; z-index: 1000;}
+</style>
+<div class="lkswidth">
+<div class="lksmaxline">
+<div class="lkswidthleft">
+   <a  href="/sy" target="_self" >
+     <img src="picture/1_2000002343.png" style="border: none; position: relative; max-width: 161px;max-height: 75px; vertical-align: middle;">
+   </a>
+</div>
+<div class="newright">
+       <ul>
+            <li>
+                <h3>
+                    <a href="index.html" >首页</a>
+                 </h3>
+            </li>
+            <li >
+                <h3>
+                    <a href="aboutus.html" >
+                            关于我们
+                    </a>
+                    </h3>
+            </li>
+            <li>
+                 <h3>
+                   <a href="product.html" >
+                      产品展示
+                   </a>
+                   </h3>
+            </li>
+            <li >
+                 <h3>
+                   <a href="news.html" >
+                        新闻资讯
+                    </a>
+                 </h3>
+             </li>
+            <li >
+                    <h3>
+                     <a href="contactus.html" >
+                            联系我们
+                     </a>
+                  </h3>
+           </li>
+    </ul>
+</div>
+</div>
+</div>
+
+
+
+
+<!--end-->
+
+
+
+
+
+
+
+    <div style="*z-index:11;*position:relative;width:100%;height:840px;margin-left:auto;margin-right:auto;background-color:">
+      <div class="header page_header yibuLayout_tempPanel" style="width:1000px;height:840px;background-color:;;">
+           <div class='runTimeflowsmartView'><div  id="view_banner_33_843" class="yibuSmartViewMargin absPos"   >
+<div class='yibuFrameContent overflow_hidden banner_Style1_Item0 view_banner_33_843_Style1_Item0' style='height:82px;width:1000px;'>    <script>
+        $(function () {
+            $("#view_banner_33_843").children("div").css("overflow", "visible");
+        })
+    </script>
+
+
+<div class="flowsmartView isflowcontainer w_container_content" refarea="Area_0" id="flowsmartView_33" >
+    <div  id="view_navigator_58_843" class="yibuSmartViewMargin absPos"   >
+<div class='yibuFrameContent navigator_Style22_Item0 view_navigator_58_843_Style22_Item0'>
+    <ul id=nav_view_navigator_58_843 styleItem=StyleColumn>
+            <li class=w_nav_item style=width:131.2px>
+                    <h3>
+                       <a href="index.html">首页</a>
+                    </h3>
+                            </li>
+            <li class=w_nav_item style=width:131.2px>
+                    <h3>
+                       <a href="aboutus.html">
+                            关于我们
+                    </a>
+                    </h3>
+                            </li>
+            <li class=w_nav_item style=width:131.2px>
+                    <h3>
+                       <a href="product.html">
+                      产品展示
+                   </a>
+                    </h3>
+                            </li>
+            <li class=w_nav_item style=width:131.2px>
+                    <h3>
+                        <a href="news.html" target=_self>
+                            新闻资讯
+                        </a>
+                    </h3>
+                            </li>
+            <li class=w_nav_item style=width:131.2px>
+                    <h3>
+                        <a href="contactus.html" target=_self>
+                            联系我们
+                        </a>
+                    </h3>
+                            </li>
+    </ul>
+        <div class="move-bg"></div>
+
+
+<input type="hidden" id="HeightVariablesStr_view_navigator_58_843" value="$height:83px;$Item_height:83px;$SubItem_height:83px;" />
+
+<script>
+
+    (function ($) {
+
+         
+
+$(window).scroll(function(){
+    if($(window).scrollTop()>100){    
+        $("#flowsmartView_33").hide();
+        $(".lkswidth").show();
+        $(".lkswidth").addClass('newadd');
+
+    }else if($(window).scrollTop()<100){
+
+         $("#flowsmartView_33").show();
+        $(".lkswidth").hide();
+     
+
+    }
+});
+
+
+
+
+
+
+        $.fn.moveview_navigator_58_843 = function (options) {
+
+            var defaults = {
+
+                width: 120,/*移动块的大小*/
+
+                extra: 50,/*反弹的距离*/
+
+                speed: 300,/*块移动的速度*/
+
+                rebound_speed: 300/*块反弹的速度*/
+
+            };
+
+            var defaultser = $.extend(defaults, options);
+
+            return this.each(function () {
+
+                var _this = $(this);
+
+                var _item = _this.find("#nav_view_navigator_58_843").children("li"); /*找到触发滑块滑动的元素	*/
+
+                var origin = _this.find("#nav_view_navigator_58_843").children("li.w_nav_item_current").index(); /*获得当前导航的索引*/
+
+                var _mover = _this.find(".move-bg"); /*找到滑块*/
+
+                var hidden; /*设置一个变量当html中没有规定cur时在鼠标移出导航后消失*/
+
+                if (origin == -1) {
+                    origin = 0;
+                    hidden = "1";
+                } else {
+                    _mover.show();
+                }; /*如果没有定义cur,则默认从第一个滑动出来*/
+
+                var cur = prev = origin; /*初始化当前的索引值等于上一个及初始值;*/
+
+                var extra = defaultser.extra; /*声明一个变量表示额外滑动的距离*/
+                _mover.css("width", defaultser.width);
+                _mover.css({ left: "" + defaultser.width * origin + "px" }); /*设置滑块当前显示的位置*/
+
+
+                //滑动方法
+
+                function move() {
+
+                    _mover.clearQueue();
+
+                    if (cur < prev) {
+                        extra = -Math.abs(defaultser.extra);
+                    } /*当当前值小于上个滑块值时，额外滑动值为负数*/
+
+                    else {
+                        extra = Math.abs(defaultser.extra)
+                    }; /*当当前值大于上个滑块值时，滑动值为正数*/
+
+                    _mover.show();
+                    if (cur != prev) {
+                        _mover.queue(
+                            function () {
+
+                                $(this).stop(true, true).animate({ left: "" + Number(cur * defaultser.width + extra) + "" }, defaultser.speed),
+                                    function () { $(this).dequeue() }
+                            }
+                        );
+                    }
+                    _mover.queue(
+                        function () {
+                            $(this).stop(true, true).animate({ left: "" + cur * defaultser.width + "" }, defaultser.rebound_speed),
+                                function () { $(this).dequeue() }
+                        }
+                    );
+                };
+
+                //设置鼠标经过事件
+
+                _item.each(function (index, it) {
+
+                    $(it).mouseover(function () {
+
+                        cur = index; /*对当前滑块值进行赋值*/
+
+                        move();
+
+                        prev = cur; /*滑动完成对上个滑块值进行赋值*/
+
+                    });
+
+                });
+
+                _this.mouseleave(function () {
+                    if (hidden == 1) {
+                        origin = cur;
+                        _mover.stop().fadeOut();
+                    } /*当html中没有规定cur时在鼠标移出导航后消失*/
+                    else {
+                        cur = origin; /*鼠标离开导航时当前滑动值等于最初滑块值*/
+
+                        if (origin > 0) {
+                            move();
+                        }
+                    }
+                });
+            });
+        }
+    })(jQuery);
+    $(function () {
+        slideMenu("nav_" + 'view_navigator_58_843');
+        jQuery("#nav_" + 'view_navigator_58_843').parent("div").css("overflow", "visible");
+
+        //子导航下边框显示不出来的fix
+        $("#nav_" + 'view_navigator_58_843').children("li").each(function () {
+            var Li_height = $(this).height();
+            $("li", this).height(Li_height);
+
+            var child_li = $("li", this);
+            var topborderwidth = $("a:first", child_li).css('border-top-width');
+            topborderwidth = isNaN(parseInt(topborderwidth)) ? 0 : parseInt(topborderwidth);
+            var bottomborderwidth = $("a:first", child_li).css('border-bottom-width');
+            bottomborderwidth = isNaN(parseInt(bottomborderwidth)) ? 0 : parseInt(bottomborderwidth);
+
+            $("a", child_li).height(Li_height - topborderwidth - bottomborderwidth);
+        });
+
+        jQuery("#nav_" + 'view_navigator_58_843').children("li").each(function () {
+            var topWidth = $(this).children("h3").children("a").css("border-top-width");
+            var leftWidth = $(this).children("h3").children("a").css("border-left-width");
+            var bottomWidth = $(this).children("h3").children("a").css("border-bottom-width");
+
+            if (topWidth != "0" && topWidth != "0px") {
+                return false;
+            }
+            if (leftWidth != "0" && leftWidth != "0px") {
+                return false;
+            }
+            if (bottomWidth != "0" && bottomWidth != "0px") {
+                return false;
+            }
+
+
+            if ($(this).children("ul").length > 0) {
+                var maxWidth = $(this).children("ul").width();
+                $(this).children("ul").children("li").each(function () {
+
+                    var a = $(this).children("a");
+                    var currentWidth = GetCurrentStrWidth(a.html(), a.css("font-size")) + 20;
+                    if (maxWidth < currentWidth)
+                        maxWidth = currentWidth;
+                });
+                $(this).children("ul").css("width", maxWidth + "px");
+            }
+        });
+        SetNavSelectedStyle("nav_" + 'view_navigator_58_843', 'nav'); //选中当前导航
+        $("#view_navigator_58_843").moveview_navigator_58_843({
+            width: $("#view_navigator_58_843").find("ul li:first").width() /*滑块的大小*/,
+            extra: $("#view_navigator_58_843").find("ul li:first").width() / 10 /*额外反弹的距离*/,
+            speed: 500 /*滑块移动的速度*/,
+            rebound_speed: 500 /*滑块反弹的速度*/
+        });
+
+        if ("False" == "False") {
+            jQuery("#" + 'view_navigator_58_843').css("z-index", "999999");
+            if ($.browser.msie) {
+                jQuery("#" + 'view_navigator_58_843').parent(".runTimeflowsmartView").css("z-index", "999999");
+            }
+            if (jQuery("#" + 'view_navigator_58_843').parent().attr("class") != "runTimeflowsmartView") { //导航可能放在容器控件中了，需要把容器控件的z-index的值设大
+                jQuery("#" + 'view_navigator_58_843').parent(".w_container_content").parent().parent().css("z-index", "999998");
+            }
+        }
+        $("#view_navigator_58_843").find(".w_subnav_item a").hover(function () {
+            $(this).stop().animate({ backgroundColor: '#FFA052' }, 500);
+        }, function () {
+            $(this).stop().animate({ backgroundColor: '#FF8827' }, 500);
+        });
+    });
+</script>
+</div>
+</div>
+<div  id="view_image_59_843" class="yibuSmartViewMargin absPos"   >
+<div class='yibuFrameContent overflow_hidden image_Style1_Item0' style='height:75px;width:161px;'>    <div class="megwh" style="height:100%; width:100%;">
+        <a id="autosize_view_image_59_843" href="/sy" target="_self" >
+            <input id="w_view_image_59_843" type="hidden" value="156" />
+            <input id="h_view_image_59_843" type="hidden" value="82" />
+            <input id="canadjustwidth_view_image_59_843" type="hidden" value="False" />
+            <input id="canadjustheight_view_image_59_843" type="hidden" value="False" />
+                <img  src="picture\1_2000002343.png"  alt="" style="border:none; position:relative;" />
+            
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            ChangeImage("view_image_59_843");
+        });
+    </script>
+</div>
+</div>
+
+</div>
+<script type="text/javascript">
+    function setLayoutHeight() {
+        var bannerheight = $("#view_banner_33_843").css("height");
+        $("#view_banner_33_843").children(".yibuFrameContent").css("height", bannerheight);
+    };
+</script></div>
+</div>
+<div  id="view_photoalbum_61_843" class="yibuSmartViewMargin absPos"   >
+<div class='yibuFrameContent overflow_hidden photoalbum_Style2_Item0 view_photoalbum_61_843_Style2_Item0' style='height:844px;width:999px;'><div class="w_slider_2 renderfullScreen w_slider_2_view_photoalbum_61_843">
+
+    <div class="w_slider_img">
+        <ul>
+                <li style="background: url(http://img.wezhan.cn/content/sitefiles/publicimages/2000002344.jpeg) center 0 no-repeat;">
+                    <div class="siteWidth">
+
+                        <p class="txt"   style="display:none;"       >
+                            
+                            <span class="btn"></span>
+                        </p>
+                        <p class="txtDesc"   style="display: none;"         >
+                            图片0
+                        </p>
+
+                        <a   style=" cursor:default"                                 title="" ></a>
+                    </div>
+                </li>
+                <li style="background: url(http://img.wezhan.cn/content/sitefiles/publicimages/2000002345.jpeg) center 0 no-repeat;">
+                    <div class="siteWidth">
+
+                        <p class="txt"   style="display:none;"       >
+                            
+                            <span class="btn"></span>
+                        </p>
+                        <p class="txtDesc"   style="display: none;"         >
+                            图片1
+                        </p>
+
+                        <a   style=" cursor:default"                                 title="" ></a>
+                    </div>
+                </li>
+        </ul>
+    </div>
+    <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+    <a  class="prev" href="javascript:void(0)"></a>
+    <a  class="next" href="javascript:void(0)"></a>
+
+    <div class="w_slider_num" ><ul></ul></div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        if ("fade"=="fold") {
+            setRenderFullScreen($("#view_photoalbum_61_843"), "window");
+        } else {
+            setRenderFullScreen($("#view_photoalbum_61_843"));
+        }
+        $(".w_slider_2_view_photoalbum_61_843").slide({
+            titCell: $(".w_slider_2_view_photoalbum_61_843 .w_slider_num ul"),
+            mainCell: $(".w_slider_2_view_photoalbum_61_843 .w_slider_img ul"),
+            effect: "fade",
+            autoPlay: "true",
+            autoPage: true,
+            trigger: "click",
+            interTime: "3000"
+        });
+    });
+
+
+</script></div>
+</div>
+<div  id="view_text_62_843" class="yibuSmartViewMargin absPos yibuAnimate"    yibuAnimate='{"delay":500,"duration":800,"direction":"L","effect":"custom.flyIn"}'>
+<div class='yibuFrameContent overflow_hidden text_Style1_Item0' style='height:221px;width:600px;'>
+<style type="text/css">
+    #view_text_62_843_txt ul{ padding-left:20px;}
+</style>
+<div id='view_text_62_843_txt'   style="cursor:default; height:100%; width:100%;"  >
+    <div class="editableContent " style="line-height:1.5;">
+        <p style="text-align: center;"><strong><span style="font-size: 36px; color: rgb(255, 255, 255);">让人们</span></strong></p><p style="text-align: center;"><strong><span style="font-size: 42px; color: rgb(255, 255, 255);">更顺畅地更便捷地</span></strong></p><p style="text-align: center;"><strong><span style="font-size: 36px; color: rgb(255, 255, 255);">进行旅游出行</span></strong></p><p style="text-align: center;"><span style="font-size: 18px; color: rgb(255, 255, 255);">to make people more smoothly, more convenient and smarter to travel</span></p><p><br/></p>
+    </div>
+</div>
+<script>
+    Pagination('view_text_62_843_txt', "首页", "尾页", "上一页", "下一页", textPageCallbackview_text_62_843);
+
+    function textPageCallbackview_text_62_843() {
+
+        $(".absPos").each(function () { $(this).removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '') });
+
+        if ($("#view_text_62_843").parent(".w_tab_container_item ").length > 0) {
+            $("#view_text_62_843").parent(".w_tab_container_item ").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+        }
+        if ($("#view_text_62_843").parents(".w_tab_container").length > 0) {
+            $("#view_text_62_843").parents(".w_tab_container").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+        }
+        if ($("#view_text_62_843").parents(".w_tab").length > 0) {
+            $("#view_text_62_843").parents(".w_tab").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+        }
+
+        
+        yiburecomputeLayoutHeight();
+        initScrollHeight_view_text_62_843();
+    }
+    function initScrollHeight_view_text_62_843() {
+        var currentHeight = $("#view_text_62_843").height();
+        var oldHeight = window["view_text_62_843" + "_height"];
+        window["view_text_62_843" + "_height"] = currentHeight;
+        if (oldHeight != undefined) {
+            var subtract = currentHeight - oldHeight;
+            if (subtract < 0) {
+                
+                if ($("#view_text_62_843").parents(".mainSamrtView").length > 0) {
+                    $("#view_text_62_843").parents(".mainSamrtView").each(function () {
+                        if ($(this).attr("style") != undefined && $(this).attr("style").toLowerCase().indexOf('height') > -1) {
+                            var height = $(this).height();
+                            var oheight = $(this).attr("oheight");
+
+                            var expandh = $(this).attr("expandh");
+                            if (oheight != undefined && expandh != undefined) {
+                                oheight = parseInt(oheight);
+                                expandh = parseInt(expandh);
+                                expandh = expandh + subtract;
+                                var newHeight = oheight + expandh;
+                                $(this).height(newHeight);
+                                $(this).attr("expandh", expandh);
+                                if ($(this).children(".yibuFrameContent").length > 0) {
+                                    if ($(this).children(".yibuFrameContent").attr("style") != undefined && $(this).children(".yibuFrameContent").attr("style").toLowerCase().indexOf('height') > -1) {
+                                        $(this).children(".yibuFrameContent").height(newHeight);
+                                    }
+                                }
+                            }
+                        }
+                        
+                    });
+                }
+            }
+        }
+    }
+    $(function () {
+        window["view_text_62_843" + "_height"] = $("#view_text_62_843").height();
+    });
+</script>
+</div>
+</div>
+<div  id="view_linkbutton_63_843" class="yibuSmartViewMargin absPos yibuAnimate"    yibuAnimate='{"delay":500,"duration":800,"direction":"R","effect":"custom.flyIn"}'>
+<div class='yibuFrameContent overflow_hidden linkbutton_Style1_Item0 view_linkbutton_63_843_Style1_Item0' style='height:56px;width:200px;'><a target="_self"   href="aboutus.html"      class="w_button_wrap" style="width: 198px ; height: 54px ; line-height: 54px ;">
+    <span class="w_button_position">
+<span class="w_button_text editableContent">READ MORE +</span>
+    </span>
+</a>
+<script>
+    $(function () {
+        var sv = $("#view_linkbutton_63_843");
+        var indiv = sv.find("div").css("white-space", "nowrap");
+        var cw = sv.width() - (indiv.outerWidth(true) - indiv.width());
+        var ch = sv.height() - (indiv.outerHeight(true) - indiv.height());
+        indiv.width(cw).height(ch).css("white-space", "");
+        indiv.find("a").width(cw).height(ch).css('line-height', ch + "px");
+    });
+</script></div>
+</div>
+</div>
+      </div>
+    </div>
+    <div class="main-wrap clearfix" style="*z-index:10;*position:relative;width:100%;margin-left:auto;margin-right:auto; margin-top: 50px;">
+        <div class="main clearfix page_main" style="width:1000px;">
+        	<div class="content yibuLayout_Body" style="min-height:100px;margin-left:auto;margin-right:auto;;background-color:;background-color:" id="yibuLayout_center">
+        	    <div  id="view_main_1_37676" class="mainSamrtView yibuSmartViewMargin"   >
+<div class='yibuFrameContent main__Item0' style='height:564px;width:100%;'><div class='runTimeflowsmartView'><div  id="view_text_6_37676" class="yibuSmartViewMargin absPos"   >
+<div class='yibuFrameContent text_Style1_Item0'>
+<style type="text/css">
+    #view_text_6_37676_txt ul{ padding-left:20px;}
+</style>
+<div id='view_text_6_37676_txt'   style="cursor:default; height:100%; width:100%;"  >
+    <div class="editableContent " style="line-height:1.5;">
+        <p style="line-height: 2em; text-align: justify;"><span style="font-size: 14px; line-height: 150%; font-family: 微软雅黑, sans-serif;"><span style="font-family: 微软雅黑, sans-serif; font-size: 14px; line-height: 21px;">　　</span>欢叫软件科技（苏州）有限公司，注册资本500万，公司主要从事互联网旅游行业的整体解决方案，公司创办人在旅游行业深耕多年，亲自带队服务了国内外一些大型的景区、主题公园，开发实施了智慧旅游线上（B2B、B2C、OTA）、线下电子票务、检票、水公园、酒店、温泉等多业态综合管理系统及平台，有丰富的行业软件开发、实施、维护的经验。公司希望大批有识之士前来合作，共同发展。</span></p><p style="line-height: 2em; text-align: justify;"><span style="font-size: 14px; line-height: 150%; font-family: 微软雅黑, sans-serif;"><br/></span></p><p style="line-height: 2em; text-align: justify;"><span style="font-size: 14px; line-height: 150%; font-family: 微软雅黑, sans-serif;">　　欢叫软件科技，致力于打造一个安全、稳定、高效、可扩展的整体旅游产品售卖解决方案，在互联网、人工智能的环境下实现既服务于大中型景区、主题公园，又帮助小景区、主题公园进行线上、线下产品销售及管理。</span></p><p style="line-height: 2em; text-align: justify;"><span style="font-size: 14px; line-height: 150%; font-family: 微软雅黑, sans-serif;"><br/></span></p><p style="line-height: 2em; text-align: justify;"><span style="font-size: 14px; line-height: 150%; font-family: 微软雅黑, sans-serif;">　　</span></p><p style="line-height: 2em; text-align: justify;"><span style="font-size: 14px; line-height: 150%; font-family: 微软雅黑, sans-serif;"><br/></span></p><p style="line-height: 2em; text-align: justify;"><span style="font-size: 14px; line-height: 150%; font-family: 微软雅黑, sans-serif;">　</span></p><p style="line-height: 2em; text-align: justify;"><span style="font-size: 14px; line-height: 150%; font-family: 微软雅黑, sans-serif;"><br/></span></p><p style="line-height: 2em; text-align: justify;"><span style="font-size: 14px; line-height: 150%; font-family: 微软雅黑, sans-serif;">　　<strong>公司愿景：</strong></span></p><p style="line-height: 2em; text-align: justify;"><span style="font-size: 14px; line-height: 150%; font-family: 微软雅黑, sans-serif;">　　让人们更顺畅地、更便捷地、更智能地获得旅游体验</span></p><p style="line-height: 2em; text-align: justify;"><span style="font-size: 14px; line-height: 150%; font-family: 微软雅黑, sans-serif;"><br/></span></p><p style="line-height: 2em; text-align: justify;"><span style="font-size: 14px; line-height: 150%; font-family: 微软雅黑, sans-serif;">　　<strong>公司目标：</strong></span></p><p style="line-height: 2em; text-align: justify;"><span style="font-size: 14px; line-height: 150%; font-family: 微软雅黑, sans-serif;">　　成为用户体验最佳的旅游平台</span></p><p><br/></p>
+    </div>
+</div>
+<script>
+    Pagination('view_text_6_37676_txt', "首页", "尾页", "上一页", "下一页", textPageCallbackview_text_6_37676);
+
+    function textPageCallbackview_text_6_37676() {
+
+        $(".absPos").each(function () { $(this).removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '') });
+
+        if ($("#view_text_6_37676").parent(".w_tab_container_item ").length > 0) {
+            $("#view_text_6_37676").parent(".w_tab_container_item ").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+        }
+        if ($("#view_text_6_37676").parents(".w_tab_container").length > 0) {
+            $("#view_text_6_37676").parents(".w_tab_container").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+        }
+        if ($("#view_text_6_37676").parents(".w_tab").length > 0) {
+            $("#view_text_6_37676").parents(".w_tab").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+        }
+
+        
+        yiburecomputeLayoutHeight();
+        initScrollHeight_view_text_6_37676();
+    }
+    function initScrollHeight_view_text_6_37676() {
+        var currentHeight = $("#view_text_6_37676").height();
+        var oldHeight = window["view_text_6_37676" + "_height"];
+        window["view_text_6_37676" + "_height"] = currentHeight;
+        if (oldHeight != undefined) {
+            var subtract = currentHeight - oldHeight;
+            if (subtract < 0) {
+                
+                if ($("#view_text_6_37676").parents(".mainSamrtView").length > 0) {
+                    $("#view_text_6_37676").parents(".mainSamrtView").each(function () {
+                        if ($(this).attr("style") != undefined && $(this).attr("style").toLowerCase().indexOf('height') > -1) {
+                            var height = $(this).height();
+                            var oheight = $(this).attr("oheight");
+
+                            var expandh = $(this).attr("expandh");
+                            if (oheight != undefined && expandh != undefined) {
+                                oheight = parseInt(oheight);
+                                expandh = parseInt(expandh);
+                                expandh = expandh + subtract;
+                                var newHeight = oheight + expandh;
+                                $(this).height(newHeight);
+                                $(this).attr("expandh", expandh);
+                                if ($(this).children(".yibuFrameContent").length > 0) {
+                                    if ($(this).children(".yibuFrameContent").attr("style") != undefined && $(this).children(".yibuFrameContent").attr("style").toLowerCase().indexOf('height') > -1) {
+                                        $(this).children(".yibuFrameContent").height(newHeight);
+                                    }
+                                }
+                            }
+                        }
+                        
+                    });
+                }
+            }
+        }
+    }
+    $(function () {
+        window["view_text_6_37676" + "_height"] = $("#view_text_6_37676").height();
+    });
+</script>
+</div>
+</div>
+</div></div>
+</div>
+
+        	</div>
+        </div>
+    </div>
+    <div style="width:100%;height:49px;background-color:#000000;margin:0 auto;">
+      <div class="footer page_footer yibuLayout_tempPanel" style="width:1000px;height:49px;background-color:#000000;;">
+           <div class='runTimeflowsmartView'><div  id="view_text_64_843" class="yibuSmartViewMargin absPos"   >
+<div class='yibuFrameContent overflow_hidden text_Style1_Item0' style='height:31px;width:1000px;'>
+<style type="text/css">
+    #view_text_64_843_txt ul{ padding-left:20px;}
+</style>
+<div id='view_text_64_843_txt'   style="cursor:default; height:100%; width:100%;"  >
+    <div class="editableContent " style="line-height:1.5;">
+        <p style="white-space: normal; text-align: center; color: rgb(153, 153, 153); font-family: 微软雅黑;"><span style="color: rgb(255, 255, 255);">版权所有：欢叫软件科技（苏州）有限公司  &nbsp;<a href="http://www.miitbeian.gov.cn/" style="color: rgb(255, 255, 255);">苏ICP备18010110号</a></span><span style="color: rgb(255, 255, 255);">&nbsp;&nbsp;技术支持：</span><span style="color: rgb(255, 255, 255);">欢叫软件科技（苏州）有限公司&nbsp;</span></p>
+    </div>
+</div>
+<script>
+    Pagination('view_text_64_843_txt', "首页", "尾页", "上一页", "下一页", textPageCallbackview_text_64_843);
+
+    function textPageCallbackview_text_64_843() {
+
+        $(".absPos").each(function () { $(this).removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '') });
+
+        if ($("#view_text_64_843").parent(".w_tab_container_item ").length > 0) {
+            $("#view_text_64_843").parent(".w_tab_container_item ").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+        }
+        if ($("#view_text_64_843").parents(".w_tab_container").length > 0) {
+            $("#view_text_64_843").parents(".w_tab_container").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+        }
+        if ($("#view_text_64_843").parents(".w_tab").length > 0) {
+            $("#view_text_64_843").parents(".w_tab").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+        }
+
+        
+        yiburecomputeLayoutHeight();
+        initScrollHeight_view_text_64_843();
+    }
+    function initScrollHeight_view_text_64_843() {
+        var currentHeight = $("#view_text_64_843").height();
+        var oldHeight = window["view_text_64_843" + "_height"];
+        window["view_text_64_843" + "_height"] = currentHeight;
+        if (oldHeight != undefined) {
+            var subtract = currentHeight - oldHeight;
+            if (subtract < 0) {
+                
+                if ($("#view_text_64_843").parents(".mainSamrtView").length > 0) {
+                    $("#view_text_64_843").parents(".mainSamrtView").each(function () {
+                        if ($(this).attr("style") != undefined && $(this).attr("style").toLowerCase().indexOf('height') > -1) {
+                            var height = $(this).height();
+                            var oheight = $(this).attr("oheight");
+
+                            var expandh = $(this).attr("expandh");
+                            if (oheight != undefined && expandh != undefined) {
+                                oheight = parseInt(oheight);
+                                expandh = parseInt(expandh);
+                                expandh = expandh + subtract;
+                                var newHeight = oheight + expandh;
+                                $(this).height(newHeight);
+                                $(this).attr("expandh", expandh);
+                                if ($(this).children(".yibuFrameContent").length > 0) {
+                                    if ($(this).children(".yibuFrameContent").attr("style") != undefined && $(this).children(".yibuFrameContent").attr("style").toLowerCase().indexOf('height') > -1) {
+                                        $(this).children(".yibuFrameContent").height(newHeight);
+                                    }
+                                }
+                            }
+                        }
+                        
+                    });
+                }
+            }
+        }
+    }
+    $(function () {
+        window["view_text_64_843" + "_height"] = $("#view_text_64_843").height();
+    });
+</script>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+      </div>
+</div>
+
+        <script type="text/javascript">
+        function yiburecomputeLayoutHeight() {
+            if (typeof (setLayoutHeight) != "undefined") {
+                ReComputeVisibleSmartViewTop(setLayoutHeight);
+            } else {
+                ReComputeVisibleSmartViewTop();
+            }
+        }
+
+        $(function () {
+            if ("True" == "False" && "false" == "true") {
+                $(document.body).bind('contextmenu', function () { return false; });
+            }
+            $('.yibuAnimate').smanimate();
+            $("img.lazyload").lazyload({ skip_invisible: false, effect: "fadeIn", failure_limit: 15, threshold: 100 });
+            var $sm_all_autoHViews = $(".main div[class^='yibuSmartViewMargin absPos']")
+                .filter(function () {
+                    var $this = $(this);
+                    var child = $this.children(".yibuFrameContent");
+                    return child.hasClass("overflow_hidden") == false &&
+                        child.hasClass("overflow_auto") == false &&
+                        $this.css("min-height") != "0px";
+                });
+            var $sm_all_imgs = $sm_all_autoHViews.find('img').filter(function () {
+                return !$(this).hasClass('lazyload');
+            });
+            //检测是否新闻固定模板标识对象
+            var newsFixTemlateFlagObj = $('#news_template_content_sm');
+            var productFixTemplateFlagObj = $('#product_template_sm_flag');
+            if ($sm_all_imgs.length > 0 && newsFixTemlateFlagObj.length == 0 && productFixTemplateFlagObj.length == 0) {
+                $sm_all_imgs.each(function () {
+                    var $this = $(this);
+                    $this.on("load", function () {
+                        yiburecomputeLayoutHeight();
+                    });
+                });
+            }
+            yiburecomputeLayoutHeight();
+            refreshStaticData();
+
+                    });
+
+    </script>
+
+</body>
+</html>
